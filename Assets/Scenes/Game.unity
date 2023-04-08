@@ -2060,6 +2060,7 @@ GameObject:
   - component: {fileID: 446492339}
   - component: {fileID: 446492338}
   - component: {fileID: 446492337}
+  - component: {fileID: 446492340}
   m_Layer: 5
   m_Name: Tower_01
   m_TagString: Untagged
@@ -2181,6 +2182,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 446492335}
   m_CullTransparentMesh: 1
+--- !u!114 &446492340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 446492335}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02b6e578f1eb64ece91545c5b27ffde1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 8307134865246182193, guid: 2a3e0b85606d9485d9c973445eed66bb, type: 3}
+  spawnTowerRoot: {fileID: 800088380}
 --- !u!1 &773540124
 GameObject:
   m_ObjectHideFlags: 0
@@ -2309,16 +2324,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ccd9dc1c4db248e581dbd554d2021e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towers:
-  - {fileID: 8307134865246182193, guid: 2a3e0b85606d9485d9c973445eed66bb, type: 3}
-  - {fileID: 5191701137514667972, guid: 91edcd30791ab4006b99aab2a89a36df, type: 3}
-  - {fileID: 3052684163847195106, guid: 5d9f203b2f02a4a36a13f611fd38e443, type: 3}
   towerUI:
   - {fileID: 446492338}
   - {fileID: 1038795769}
   - {fileID: 1270317608}
-  spawnPoints: {fileID: 306551455}
-  spawnTowerRoot: {fileID: 0}
+  spawnTiles: {fileID: 306551455}
 --- !u!4 &901524038
 Transform:
   m_ObjectHideFlags: 0
@@ -2346,6 +2356,7 @@ GameObject:
   - component: {fileID: 1038795770}
   - component: {fileID: 1038795769}
   - component: {fileID: 1038795768}
+  - component: {fileID: 1038795771}
   m_Layer: 5
   m_Name: Tower_02
   m_TagString: Untagged
@@ -2467,6 +2478,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1038795766}
   m_CullTransparentMesh: 1
+--- !u!114 &1038795771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1038795766}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02b6e578f1eb64ece91545c5b27ffde1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 5191701137514667972, guid: 91edcd30791ab4006b99aab2a89a36df, type: 3}
+  spawnTowerRoot: {fileID: 800088380}
 --- !u!1 &1189623980
 GameObject:
   m_ObjectHideFlags: 0
@@ -4107,6 +4132,7 @@ GameObject:
   - component: {fileID: 1270317609}
   - component: {fileID: 1270317608}
   - component: {fileID: 1270317607}
+  - component: {fileID: 1270317610}
   m_Layer: 5
   m_Name: Tower_03
   m_TagString: Untagged
@@ -4228,6 +4254,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1270317605}
   m_CullTransparentMesh: 1
+--- !u!114 &1270317610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1270317605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 02b6e578f1eb64ece91545c5b27ffde1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 3052684163847195106, guid: 5d9f203b2f02a4a36a13f611fd38e443, type: 3}
+  spawnTowerRoot: {fileID: 800088380}
 --- !u!1 &2000967188
 GameObject:
   m_ObjectHideFlags: 0

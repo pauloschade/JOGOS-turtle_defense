@@ -6,18 +6,9 @@ using UnityEngine.UI;
 
 public class Spawner : MonoBehaviour
 {
-  //list of towers (prefabs) to spawn
-  public GameObject[] towers;
-  //list of towers UI
-  public List<Image> towerUI;
-  //list of spawn points
-  public Tilemap spawnPoints;
-  //time between spawns
-
-  public Transform spawnTowerRoot;
-
+  [SerializeField] private List<Image> towerUI;
+  [SerializeField] private Tilemap spawnTiles;
   private int spawnIndex;
-
 
   void Start()
   {
@@ -37,36 +28,34 @@ public class Spawner : MonoBehaviour
     Debug.Log("Selected tower");
     HighlightTower();
   }
+	
+  public void RevertCellState(Vector3Int pos)
+  {
+    spawnTiles.SetColliderType(pos, Tile.ColliderType.Sprite);
+  }
 
   void DetectSpawnPoint()
   {
     //get the mouse position
     Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
     //get the tile position
-    Vector3Int tilePos = spawnPoints.WorldToCell(mousePos);
+    Vector3Int tilePos = spawnTiles.WorldToCell(mousePos);
     //get center of tile
-    Vector3 tileCenter = spawnPoints.GetCellCenterWorld(tilePos);
+    Vector3 tileCenter = spawnTiles.GetCellCenterWorld(tilePos);
     Spawn(tileCenter, tilePos);
 
   }
 
   void Spawn(Vector3 tileCenter, Vector3Int tilePos)
   {
-    if(spawnPoints.GetColliderType(tilePos) == Tile.ColliderType.Sprite)
+    if(spawnTiles.GetColliderType(tilePos) == Tile.ColliderType.Sprite)
     {
       Debug.Log("Spawn");
-      SpawnTower(tileCenter);
+      towerUI[spawnIndex].GetComponent<TowerSelector>().SpawnTower(tileCenter);
+      spawnTiles.SetColliderType(tilePos, Tile.ColliderType.None);
     }
     UnhighlightTower();
     ClearIndex();
-  }
-
-  void SpawnTower(Vector3 tileCenter) 
-  {
-    GameObject tower = Instantiate(towers[spawnIndex], spawnTowerRoot);
-    tower.transform.position = tileCenter;
-    //align with image botton
-    tower.transform.position += new Vector3(0, 0.5f, 0);
   }
 
   void HighlightTower()
