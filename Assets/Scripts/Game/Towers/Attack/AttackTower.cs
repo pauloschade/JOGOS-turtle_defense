@@ -1,26 +1,34 @@
 using UnityEngine;
 using System.Collections;
-public abstract class AttackTower : Tower
+public class AttackTower : Tower
 {
   [SerializeField] protected int damage;
   [SerializeField] protected float range;
   [SerializeField] protected float attackRate;
+  [SerializeField] protected Sprite[] spriteArray;
 
   public override void Start()
   {
     base.Start();
-    StartCoroutine(AttackDelay());
+    StartCoroutine(AttackMotion());
   }
 
-  protected virtual IEnumerator AttackDelay()
+  protected virtual IEnumerator AttackMotion()
   {
-      yield return new WaitForSeconds(1/attackRate);
-      Animate();
+      //return Animate();
+      yield return Animate();
       Attack();
-      StartCoroutine(AttackDelay());
+      StartCoroutine(AttackMotion());
   }
-  abstract protected void Attack();
+  protected virtual void Attack() {
+    return;
+  }
 
-  abstract protected void Animate();
+  protected virtual IEnumerator Animate() {
+    for (int i = 0; i < spriteArray.Length; i++) {
+      gameObject.GetComponent<SpriteRenderer>().sprite = spriteArray[i];
+      yield return new WaitForSeconds(1/attackRate/spriteArray.Length);
+    }
+  }
 
 }

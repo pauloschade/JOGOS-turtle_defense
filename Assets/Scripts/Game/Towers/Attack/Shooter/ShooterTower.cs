@@ -11,9 +11,4 @@ public class ShooterTower : AttackTower
     projectile.GetComponent<Projectile>().Init(damage, speed, range);
   }
 
-  protected override void Animate()
-  {
-    return;
-  }
-
 }
