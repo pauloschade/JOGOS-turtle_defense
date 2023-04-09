@@ -12,7 +12,6 @@ public class Spawner : MonoBehaviour
 
   void Start()
   {
-    Debug.Log("Start");
     spawnIndex = -1;
     UnhighlightAllTowers();
   }
@@ -25,37 +24,37 @@ public class Spawner : MonoBehaviour
   public void SelectTower(int index)
   {
     spawnIndex = index;
-    Debug.Log("Selected tower");
     HighlightTower();
-  }
-	
-  public void RevertCellState(Vector3Int pos)
-  {
-    spawnTiles.SetColliderType(pos, Tile.ColliderType.Sprite);
   }
 
   void DetectSpawnPoint()
   {
-    //get the mouse position
     Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-    //get the tile position
     Vector3Int tilePos = spawnTiles.WorldToCell(mousePos);
-    //get center of tile
-    Vector3 tileCenter = spawnTiles.GetCellCenterWorld(tilePos);
-    Spawn(tileCenter, tilePos);
+    Spawn(tilePos);
 
   }
 
-  void Spawn(Vector3 tileCenter, Vector3Int tilePos)
+  void Spawn(Vector3Int tilePos)
   {
-    if(spawnTiles.GetColliderType(tilePos) == Tile.ColliderType.Sprite)
-    {
-      Debug.Log("Spawn");
-      towerUI[spawnIndex].GetComponent<TowerSelector>().SpawnTower(tileCenter);
-      spawnTiles.SetColliderType(tilePos, Tile.ColliderType.None);
-    }
+    towerUI[spawnIndex].GetComponent<TowerSelector>().SpawnTower(tilePos, spawnTiles);
     UnhighlightTower();
     ClearIndex();
+  }
+  public void SetCellState(Vector3Int[] pos)
+  {
+    foreach(Vector3Int cellPos in pos)
+    {
+      spawnTiles.SetColliderType(cellPos, Tile.ColliderType.None);
+    }
+  }
+
+  public void RevertCellState(Vector3Int[] pos)
+  {
+    foreach(Vector3Int cellPos in pos)
+    {
+      spawnTiles.SetColliderType(cellPos, Tile.ColliderType.Sprite);
+    }
   }
 
   void HighlightTower()

@@ -1,21 +1,26 @@
 using UnityEngine;
 
-public class Projectile : MonoBehaviour 
+public abstract class Projectile : MonoBehaviour 
 {
-    [SerializeField] private int damage;
-    [SerializeField] private float speed;
-    //[SerializeField] private GameObject target;
-    // public void Init(GameObject target)
-    // {
-    //   this.target = target;
-    // }
+    [SerializeField] protected int damage;
+    [SerializeField] protected float speed;
+    [SerializeField] protected float range;
+    protected float distanceTraveled = 0.0f;
 
     protected virtual void FixedUpdate()
     {
+      CheckDistance();
       Translate();
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    public virtual void Init(int damage, float speed, float range)
+    {
+      this.damage = damage;
+      this.speed = speed;
+      this.range = range;
+    }
+
+    protected void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag=="Enemy")
         {
@@ -23,23 +28,23 @@ public class Projectile : MonoBehaviour
             //collision.GetComponent<Enemy>().LoseHealth();
             Destroy(gameObject);
         }
-        if (collision.tag == "Out")
-        {            
-            Destroy(gameObject);
-        }
+        // if (collision.tag == "Out")
+        // {            
+        //     Destroy(gameObject);
+        // }
     }
 
     protected virtual void Translate() 
     {
       transform.Translate(transform.right * speed * Time.deltaTime);
-      //distanceTraveled += speed * Time.deltaTime;
+      distanceTraveled += speed * Time.deltaTime;
     }
 
-    // private void CheckDistance()
-    // {
-    //     if (distanceTraveled >= range)
-    //     {
-    //         Destroy(gameObject);
-    //     }
-    // }
+    protected virtual void CheckDistance()
+    {
+        if (distanceTraveled >= range)
+        {
+            Destroy(gameObject);
+        }
+    }
 }
