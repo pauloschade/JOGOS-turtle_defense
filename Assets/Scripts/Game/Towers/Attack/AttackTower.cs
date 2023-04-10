@@ -16,6 +16,7 @@ public class AttackTower : Tower
   protected virtual IEnumerator AttackMotion()
   {
       //return Animate();
+      if (isDead) yield break;
       yield return Animate();
       Attack();
       StartCoroutine(AttackMotion());

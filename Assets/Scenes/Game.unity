@@ -2194,7 +2194,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 02b6e578f1eb64ece91545c5b27ffde1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 8449587544852736131, guid: 2a3e0b85606d9485d9c973445eed66bb, type: 3}
+  prefab: {fileID: 7055887284525404517, guid: 2a3e0b85606d9485d9c973445eed66bb, type: 3}
   spawnTowerRoot: {fileID: 800088380}
 --- !u!1 &773540124
 GameObject:

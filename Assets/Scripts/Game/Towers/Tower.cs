@@ -7,34 +7,45 @@ using UnityEngine.UI;
 
 public abstract class Tower : MonoBehaviour
 {
-    public int health;
-    public int cost;
+    [SerializeField] protected float health;
+    [SerializeField] protected int cost;
+    [SerializeField] protected Healthbar healthbar;
+    protected bool isDead = false;
     protected Vector3Int[] cellPositions;
     
     public virtual void Start()
     {
-        
+        //instantiates healthbar
+        healthbar = Instantiate(healthbar, transform);
+        healthbar.Init(health);
+    }
+
+    public virtual void Update()
+    {
+        if (isDead) return;
+        LoseHealth(0.01f);
     }
     public virtual void Init(Vector3Int[] cellPositions, Tilemap spawnTiles)
     {
-        cellPositions = cellPositions;
-        CenterOnCells(cellPositions, spawnTiles);
-        Live(cellPositions);
+        this.cellPositions = cellPositions;
+        CenterOnCells(spawnTiles);
+        Live();
     }
 
     //Lose Health
-    public virtual bool LoseHealth(int amount)
+    public virtual bool LoseHealth(float amount)
     {
         //health = health - amount
         health -= amount;
+        healthbar.SetHealth(health);
 
         if (health <= 0)
         {
             Die();
-            return true;
+            isDead = true;
         }
 
-        return false;
+        return isDead;
     }
 
     //Die
@@ -45,12 +56,12 @@ public abstract class Tower : MonoBehaviour
         Destroy(gameObject);
     }
 
-    protected virtual void Live(Vector3Int[] cellPositions)
+    protected virtual void Live()
     {
         FindObjectOfType<Spawner>().SetCellState(cellPositions);
     }
 
-    protected virtual void CenterOnCells(Vector3Int[] cellPositions, Tilemap spawnTiles)
+    protected virtual void CenterOnCells(Tilemap spawnTiles)
     {
         Vector3 center = Vector3.zero;
         float towerSize = gameObject.GetComponent<SpriteRenderer>().bounds.size.y/3;
