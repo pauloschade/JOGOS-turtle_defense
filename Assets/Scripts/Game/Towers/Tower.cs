@@ -10,7 +10,7 @@ public abstract class Tower : MonoBehaviour
     [SerializeField] protected float health;
     [SerializeField] protected int cost;
     [SerializeField] protected Healthbar healthbar;
-    protected bool isDead = false;
+    public bool IsDead  { get; private set;}
     protected Vector3Int[] cellPositions;
     
     public virtual void Start()
@@ -22,7 +22,7 @@ public abstract class Tower : MonoBehaviour
 
     public virtual void Update()
     {
-        if (isDead) return;
+        if (IsDead) return;
         LoseHealth(0.01f);
     }
     public virtual void Init(Vector3Int[] cellPositions, Tilemap spawnTiles)
@@ -33,20 +33,16 @@ public abstract class Tower : MonoBehaviour
     }
 
     //Lose Health
-    public virtual bool LoseHealth(float amount)
+    public virtual void LoseHealth(float amount)
     {
-        //health = health - amount
         health -= amount;
         healthbar.SetHealth(health);
-
-        if (health <= 0)
-        {
-            Die();
-            isDead = true;
-        }
-
-        return isDead;
+        if (health > 0) return;
+        IsDead = true;
+        Die();
     }
+
+
 
     //Die
     protected virtual void Die()
