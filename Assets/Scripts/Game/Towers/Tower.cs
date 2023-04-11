@@ -32,8 +32,15 @@ public abstract class Tower : MonoBehaviour
         Live();
     }
 
+    public virtual void TakeDamage(float amount, int hitBox)
+    {
+        if (IsDead) return;
+        if(GetHitBoxY() != hitBox) return;
+        LoseHealth(amount);
+    }
+
     //Lose Health
-    public virtual void LoseHealth(float amount)
+    protected virtual void LoseHealth(float amount)
     {
         health -= amount;
         healthbar.SetHealth(health);
@@ -41,9 +48,10 @@ public abstract class Tower : MonoBehaviour
         IsDead = true;
         Die();
     }
-
-
-
+    protected virtual int GetHitBoxY()
+    {
+        return cellPositions[^1].y;
+    }
     //Die
     protected virtual void Die()
     {

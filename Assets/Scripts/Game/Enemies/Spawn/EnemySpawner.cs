@@ -23,8 +23,10 @@ public class EnemySpawner : MonoBehaviour
     {
       int prefab = Random.Range(0,prefabs.Count);
       int spawnPoint = Random.Range(0,spawnPoints.Count);
-      Debug.Log("Spawning enemy: " + spawnPoints[spawnPoint].position);
-      Instantiate(prefabs[prefab], spawnPoints[spawnPoint]);
+      GameObject enemy = Instantiate(prefabs[prefab], spawnPoints[spawnPoint]);
+      enemy.GetComponent<Enemy>().Init();
+      float towerSize = enemy.GetComponent<SpriteRenderer>().bounds.size.y/3;
+      enemy.transform.position += towerSize * Vector3.up;
     }
 
 }

@@ -8,7 +8,7 @@ public class ShooterTower : AttackTower
   protected override void Attack()
   {
     GameObject projectile = Instantiate(projectilePrefab, transform);
-    projectile.GetComponent<Projectile>().Init(damage, speed, range);
+    projectile.GetComponent<Projectile>().Init(damage, speed, range, GetHitBoxY());
   }
 
 }
