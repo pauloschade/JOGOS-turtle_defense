@@ -2,9 +2,9 @@ using UnityEngine;
 
 public abstract class Projectile : MonoBehaviour 
 {
-    [SerializeField] protected int damage;
-    [SerializeField] protected float speed;
-    [SerializeField] protected float range;
+    protected int damage;
+    protected float speed;
+    protected float range;
     protected int yPos;
     protected float distanceTraveled = 0.0f;
 
@@ -26,9 +26,9 @@ public abstract class Projectile : MonoBehaviour
     {
       if (collision.gameObject.CompareTag("Enemy"))
       {
-        Debug.Log("Projectile collided with enemy");
         Enemy enemy = collision.gameObject.GetComponent<Enemy>();
         enemy.TakeDamage(damage, yPos);
+        Destroy(gameObject);
       }
     }
 

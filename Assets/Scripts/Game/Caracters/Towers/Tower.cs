@@ -5,12 +5,10 @@ using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
 using UnityEngine.UI;
 
-public abstract class Tower : MonoBehaviour
+public abstract class Tower : Caracter
 {
-    [SerializeField] protected float health;
     [SerializeField] protected int cost;
     [SerializeField] protected Healthbar healthbar;
-    public bool IsDead  { get; private set;}
     protected Vector3Int[] cellPositions;
     
     public virtual void Start()
@@ -30,34 +28,12 @@ public abstract class Tower : MonoBehaviour
         this.cellPositions = cellPositions;
         CenterOnCells(spawnTiles);
         Live();
+        SetYPos();
     }
-
-    public virtual void TakeDamage(float amount, int hitBox)
+    protected override void LoseHealth(float amount)
     {
-        if (IsDead) return;
-        if(GetHitBoxY() != hitBox) return;
-        LoseHealth(amount);
-    }
-
-    //Lose Health
-    protected virtual void LoseHealth(float amount)
-    {
-        health -= amount;
+        base.LoseHealth(amount);
         healthbar.SetHealth(health);
-        if (health > 0) return;
-        IsDead = true;
-        Die();
-    }
-    protected virtual int GetHitBoxY()
-    {
-        return cellPositions[^1].y;
-    }
-    //Die
-    protected virtual void Die()
-    {
-        Debug.Log("Tower is dead");
-        FindObjectOfType<Spawner>().RevertCellState(cellPositions);
-        Destroy(gameObject);
     }
 
     protected virtual void Live()
@@ -81,5 +57,10 @@ public abstract class Tower : MonoBehaviour
     {
       //Debug.Log("TOWER collision: " + collision.gameObject.name);
       return;
+    }
+
+    protected override void SetYPos()
+    {
+        YPos = cellPositions[^1].y;
     }
 }
