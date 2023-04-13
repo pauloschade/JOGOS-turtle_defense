@@ -22,9 +22,8 @@ public abstract class Projectile : MonoBehaviour
       this.yPos = yPos;
     }
 
-    protected void OnTriggerEnter2D(Collider2D collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
-      Debug.Log("Projectile collided with: " + collision.gameObject.tag);
       if (collision.gameObject.CompareTag("Enemy"))
       {
         Debug.Log("Projectile collided with enemy");

@@ -76,4 +76,10 @@ public abstract class Tower : MonoBehaviour
         center /= cellPositions.Length;
         transform.position = center + new Vector3(0, towerSize, 0);
     }
+
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+      //Debug.Log("TOWER collision: " + collision.gameObject.name);
+      return;
+    }
 }
