@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fec7b51c123b8442dba5376f5a4d4b01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 0
+  damage: 2
   speed: 3
   range: 0
   spriteImg: {fileID: 5025860607052844172}

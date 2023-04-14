@@ -100,18 +100,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  cost: 10
-  healthbar: {fileID: 6871919442417728473, guid: 45bdedd2d9632477abe64df47d9eb61d, type: 3}
-  damage: 0
-  range: 10
-  attackRate: 1
   spriteArray:
   - {fileID: 7166236263522030466, guid: e362bc6a7c79fce4db16d145d43a5550, type: 3}
   - {fileID: 2470319409956435798, guid: e362bc6a7c79fce4db16d145d43a5550, type: 3}
   - {fileID: -4540918584354326388, guid: e362bc6a7c79fce4db16d145d43a5550, type: 3}
   - {fileID: -4455822056875728695, guid: e362bc6a7c79fce4db16d145d43a5550, type: 3}
   - {fileID: -6056987297122131021, guid: cd947491a13509945aa1b644f9db3ef2, type: 3}
+  cost: 10
+  healthbar: {fileID: 6871919442417728473, guid: 45bdedd2d9632477abe64df47d9eb61d, type: 3}
+  damage: 2
+  attackRate: 1
   speed: 10
+  range: 10
   projectilePrefab: {fileID: 5025860608346874974, guid: 2fa05eb95fb5e40ca9b7ab2943561700, type: 3}
 --- !u!50 &1403681213153353350
 Rigidbody2D:
@@ -147,7 +147,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.006704092, y: -0.13407671}
+  m_Offset: {x: -0.03555721, y: -0.065273166}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -158,5 +158,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.0073771, y: 1.0118465}
+  m_Size: {x: 0.9496709, y: 0.87423956}
   m_EdgeRadius: 0

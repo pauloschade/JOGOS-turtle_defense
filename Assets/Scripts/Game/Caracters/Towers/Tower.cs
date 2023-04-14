@@ -41,6 +41,12 @@ public abstract class Tower : Caracter
         FindObjectOfType<Spawner>().SetCellState(cellPositions);
     }
 
+    protected override void Die()
+    {
+        FindObjectOfType<Spawner>().RevertCellState(cellPositions);
+        base.Die();
+    }
+
     protected virtual void CenterOnCells(Tilemap spawnTiles)
     {
         Vector3 center = Vector3.zero;

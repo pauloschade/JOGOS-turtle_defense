@@ -99,10 +99,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59da8847e4f494ee0a01feb454fb3eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 4
+  health: 20
+  spriteArray:
+  - {fileID: 4320010084133899996, guid: 52d40d1d463a123498d838dd108b712a, type: 3}
+  - {fileID: 7659680398461486745, guid: 52d40d1d463a123498d838dd108b712a, type: 3}
+  - {fileID: -3555855070186029808, guid: 52d40d1d463a123498d838dd108b712a, type: 3}
+  - {fileID: 6870164852964529440, guid: 52d40d1d463a123498d838dd108b712a, type: 3}
+  - {fileID: -5462098846767402552, guid: 52d40d1d463a123498d838dd108b712a, type: 3}
   speed: 2
-  damage: 1000
-  attackRate: 0
+  damage: 10
+  attackRate: 1
 --- !u!50 &8185782440276258525
 Rigidbody2D:
   serializedVersion: 4

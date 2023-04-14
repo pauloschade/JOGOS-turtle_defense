@@ -8,12 +8,19 @@ public class TowerSelector : MonoBehaviour
 {
   [SerializeField] protected GameObject prefab;
   [SerializeField] protected Transform spawnTowerRoot;
+  protected Currency currency;
+
+  protected virtual void Start()
+  {
+    currency = Currency.GetInstance();
+  }
   public virtual void SpawnTower(Vector3Int cellPosition, Tilemap spawnTiles)
   {
     Vector3Int[] cellPositions = GetCellPositions(cellPosition);
     if (!GetCellState(cellPositions, spawnTiles)) return;
     GameObject tower = Instantiate(prefab, spawnTowerRoot);
     tower.GetComponent<Tower>().Init(cellPositions, spawnTiles);
+    Spend(10);
   }
 
   protected virtual Vector3Int[] GetCellPositions(Vector3Int cellPosition)
@@ -28,5 +35,11 @@ public class TowerSelector : MonoBehaviour
       if (spawnTiles.GetColliderType(cellPos) == Tile.ColliderType.None) return false;
     }
     return true;
+  }
+
+  protected void Spend(float amount)
+  {
+    currency.SpendFunds(amount);
+    Debug.Log("new bal: " + currency.balance);
   }
 }
