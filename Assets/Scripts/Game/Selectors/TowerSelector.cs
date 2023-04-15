@@ -8,7 +8,7 @@ public class TowerSelector : MonoBehaviour
 {
   [SerializeField] protected GameObject prefab;
   [SerializeField] protected Transform spawnTowerRoot;
-  [SerializeField] protected int towerCost;
+  [SerializeField] protected float towerCost;
   [SerializeField] protected Cost cost;
   protected Currency currency;
 
@@ -43,6 +43,5 @@ public class TowerSelector : MonoBehaviour
   protected void Spend(float amount)
   {
     currency.SpendFunds(amount);
-    Debug.Log("new bal: " + currency.balance);
   }
 }

@@ -5,11 +5,10 @@ using UnityEngine.UI;
 using TMPro;
 public class Cost : MonoBehaviour  
 {
-  private int towerCost;
+  private float towerCost;
   [SerializeField] private TextMeshProUGUI coinText;
-  public void Init(int towerCost) {
+  public void Init(float towerCost) {
     this.towerCost = towerCost;
-    Debug.Log("cost: " + towerCost);
     coinText.text = towerCost.ToString();
   }
 }

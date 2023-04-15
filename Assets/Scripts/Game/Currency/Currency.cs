@@ -5,7 +5,6 @@ public sealed class Currency : SingletonBase<Currency>
 {
     public float balance;
     private static Treasury treasury;
-
     //generate ctor
     public void AddFunds(float amount)
     {
