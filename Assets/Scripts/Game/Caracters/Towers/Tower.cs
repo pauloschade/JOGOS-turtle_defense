@@ -7,7 +7,6 @@ using UnityEngine.UI;
 
 public abstract class Tower : Caracter
 {
-    [SerializeField] protected int cost;
     [SerializeField] protected Healthbar healthbar;
     protected Vector3Int[] cellPositions;
     

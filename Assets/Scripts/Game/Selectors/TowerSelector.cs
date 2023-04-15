@@ -8,11 +8,14 @@ public class TowerSelector : MonoBehaviour
 {
   [SerializeField] protected GameObject prefab;
   [SerializeField] protected Transform spawnTowerRoot;
+  [SerializeField] protected int towerCost;
+  [SerializeField] protected Cost cost;
   protected Currency currency;
 
   protected virtual void Start()
   {
     currency = Currency.GetInstance();
+    cost.Init(towerCost);
   }
   public virtual void SpawnTower(Vector3Int cellPosition, Tilemap spawnTiles)
   {
@@ -20,7 +23,7 @@ public class TowerSelector : MonoBehaviour
     if (!GetCellState(cellPositions, spawnTiles)) return;
     GameObject tower = Instantiate(prefab, spawnTowerRoot);
     tower.GetComponent<Tower>().Init(cellPositions, spawnTiles);
-    Spend(10);
+    Spend(towerCost);
   }
 
   protected virtual Vector3Int[] GetCellPositions(Vector3Int cellPosition)

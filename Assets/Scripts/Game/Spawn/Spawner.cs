@@ -37,6 +37,7 @@ public class Spawner : MonoBehaviour
 
   void Spawn(Vector3Int tilePos)
   {
+    Debug.Log("Spawn index " + spawnIndex);
     towerUI[spawnIndex].GetComponent<TowerSelector>().SpawnTower(tilePos, spawnTiles);
     UnhighlightTower();
     ClearIndex();
