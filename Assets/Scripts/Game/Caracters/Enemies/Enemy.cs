@@ -36,6 +36,10 @@ public class Enemy : Caracter
         }
         target = null;
       }
+      if (collision.gameObject.CompareTag("EOM"))
+      {
+        Die();
+      }
     }
 
     protected virtual IEnumerator AttackMotion()
