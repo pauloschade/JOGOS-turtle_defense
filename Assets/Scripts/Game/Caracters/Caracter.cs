@@ -47,5 +47,6 @@ public abstract class Caracter : MonoBehaviour
       Destroy(gameObject);
     }
     protected abstract void SetYPos();
+    public abstract int GetXPos();
 
 }

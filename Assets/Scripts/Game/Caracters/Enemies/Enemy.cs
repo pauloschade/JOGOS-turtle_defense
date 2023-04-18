@@ -30,7 +30,8 @@ public class Enemy : Caracter
       if (collision.gameObject.CompareTag("Tower"))
       {
         target = collision.gameObject.GetComponent<Tower>();
-        if (target.YPos == YPos) {
+        Debug.Log("Enemy XPos: " + GetXPos() + " Tower XPos: " + target.GetXPos());
+        if (target.YPos == YPos && target.GetXPos() == GetXPos() - 1) {
           StartCoroutine(AttackMotion());
           return;
         }
@@ -44,7 +45,7 @@ public class Enemy : Caracter
 
     protected virtual IEnumerator AttackMotion()
     {
-      if (target == null) yield break;
+      if (target.IsDead) yield break;
       yield return Animate(attackRate);
       Attack();
       StartCoroutine(AttackMotion());
@@ -62,6 +63,11 @@ public class Enemy : Caracter
     protected override void SetYPos()
     {
       YPos = (int) Math.Floor(transform.position.y);
+    }
+
+    public override int GetXPos()
+    {
+      return (int) Math.Floor(transform.position.x);
     }
 
 }

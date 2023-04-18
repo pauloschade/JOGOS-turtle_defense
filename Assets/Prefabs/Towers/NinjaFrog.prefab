@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8031157862836753618}
   - component: {fileID: 1403681213153353350}
   - component: {fileID: 2675307380996913942}
+  - component: {fileID: 1466618012463367162}
   m_Layer: 9
   m_Name: NinjaFrog
   m_TagString: Tower
@@ -99,17 +100,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32ae62635fa6d437fa1d09b7c82c190b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 100
+  health: 150
   spriteArray:
   - {fileID: 7166236263522030466, guid: e362bc6a7c79fce4db16d145d43a5550, type: 3}
   - {fileID: 2470319409956435798, guid: e362bc6a7c79fce4db16d145d43a5550, type: 3}
   - {fileID: -4540918584354326388, guid: e362bc6a7c79fce4db16d145d43a5550, type: 3}
   - {fileID: -4455822056875728695, guid: e362bc6a7c79fce4db16d145d43a5550, type: 3}
   - {fileID: -6056987297122131021, guid: cd947491a13509945aa1b644f9db3ef2, type: 3}
-  cost: 10
   healthbar: {fileID: 6871919442417728473, guid: 45bdedd2d9632477abe64df47d9eb61d, type: 3}
-  damage: 2
-  attackRate: 1
+  damage: 7
+  attackRate: 2
   speed: 10
   range: 10
   projectilePrefab: {fileID: 5025860608346874974, guid: 2fa05eb95fb5e40ca9b7ab2943561700, type: 3}
@@ -160,3 +160,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.9496709, y: 0.87423956}
   m_EdgeRadius: 0
+--- !u!70 &1466618012463367162
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7055887284525404517}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 5, y: -0.1}
+  m_Size: {x: 10, y: 0.3}
+  m_Direction: 1

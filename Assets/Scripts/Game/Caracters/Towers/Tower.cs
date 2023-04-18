@@ -58,14 +58,19 @@ public abstract class Tower : Caracter
         transform.position = center + new Vector3(0, towerSize, 0);
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-      //Debug.Log("TOWER collision: " + collision.gameObject.name);
-      return;
-    }
+    // void OnCollisionEnter2D(Collision2D collision)
+    // {
+    //   //Debug.Log("TOWER collision: " + collision.gameObject.name);
+    //   return;
+    // }
 
     protected override void SetYPos()
     {
         YPos = cellPositions[^1].y;
+    }
+
+    public override int GetXPos()
+    {
+        return cellPositions[^1].x;
     }
 }
