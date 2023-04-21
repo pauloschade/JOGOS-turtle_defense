@@ -2381,9 +2381,9 @@ GameObject:
   m_Component:
   - component: {fileID: 901524038}
   - component: {fileID: 901524037}
-  - component: {fileID: 901524039}
   - component: {fileID: 901524040}
   - component: {fileID: 901524041}
+  - component: {fileID: 901524042}
   m_Layer: 0
   m_Name: _Scripts
   m_TagString: Untagged
@@ -2423,33 +2423,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &901524039
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 901524036}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 269c984bd222145f684ea244d3a77768, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefabs:
-  - {fileID: 869297017752583622, guid: c5d4a8f3d236f4f369595cdd703efad6, type: 3}
-  - {fileID: 869297017752583622, guid: c5d4a8f3d236f4f369595cdd703efad6, type: 3}
-  spawnPoints:
-  - {fileID: 1669391788}
-  - {fileID: 2047247003}
-  - {fileID: 666600169}
-  - {fileID: 455330389}
-  - {fileID: 93735336}
-  - {fileID: 1174633586}
-  - {fileID: 1386071848}
-  - {fileID: 1495855226}
-  - {fileID: 793609086}
-  - {fileID: 718789551}
-  spawnInterval: 3
 --- !u!114 &901524040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2476,6 +2449,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxEnemiesCount: 3
+--- !u!114 &901524042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 901524036}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1339cfb4f792b4957940302c57b8cb8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabs:
+  - {fileID: 869297017752583622, guid: c5d4a8f3d236f4f369595cdd703efad6, type: 3}
+  - {fileID: 869297017752583622, guid: c5d4a8f3d236f4f369595cdd703efad6, type: 3}
+  spawnPoints:
+  - {fileID: 1669391788}
+  - {fileID: 2047247003}
+  - {fileID: 666600169}
+  - {fileID: 455330389}
+  - {fileID: 93735336}
+  - {fileID: 1174633586}
+  - {fileID: 1386071848}
+  - {fileID: 1495855226}
+  - {fileID: 793609086}
+  - {fileID: 718789551}
+  spawnInterval: 2
 --- !u!1 &1104482432
 GameObject:
   m_ObjectHideFlags: 0

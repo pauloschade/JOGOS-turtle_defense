@@ -36,8 +36,7 @@ public class Enemy : Caracter
       if (collision.gameObject.CompareTag("Tower"))
       {
         target = collision.gameObject.GetComponent<Tower>();
-        Debug.Log("Enemy XPos: " + GetXPos() + " Tower XPos: " + target.GetXPos());
-        if (target.YPos == YPos && target.GetXPos() == GetXPos() - 1) {
+        if (target.YPos == YPos && (target.GetXPos() == GetXPos() - 1 || target.GetXPos() == GetXPos())) {
           StartCoroutine(AttackMotion());
           return;
         }

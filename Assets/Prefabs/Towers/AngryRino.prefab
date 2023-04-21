@@ -153,7 +153,6 @@ MonoBehaviour:
   - {fileID: -1047649535969266603, guid: af986635e8356a644a7348f570cd3579, type: 3}
   - {fileID: -1075854790282143660, guid: e3531be27cb827743bac8ea66dae5bfd, type: 3}
   - {fileID: -1075854790282143660, guid: e3531be27cb827743bac8ea66dae5bfd, type: 3}
-  cost: 0
   healthbar: {fileID: 6871919442417728473, guid: 45bdedd2d9632477abe64df47d9eb61d, type: 3}
   damage: 3
   attackRate: 3
