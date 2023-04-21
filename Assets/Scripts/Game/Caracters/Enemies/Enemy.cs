@@ -12,6 +12,12 @@ public class Enemy : Caracter
     [SerializeField] protected float damage;
     [SerializeField] protected int attackRate;
     private Tower target = null;
+    [SerializeField] protected GameManager gameManager;
+
+    void Start()
+    {
+      gameManager = GameManager.GetInstance();
+    }
 
     public void Init()
     {
@@ -39,7 +45,9 @@ public class Enemy : Caracter
       }
       if (collision.gameObject.CompareTag("EOM"))
       {
-        Die();
+        //destroy enemy
+        Destroy(gameObject);
+        gameManager.SetGameOver();
       }
     }
 

@@ -18,4 +18,9 @@ public abstract class SingletonBase<T>
     return;
   }
 
+  public void Destroy()
+  {
+    _instance = null;
+  }
+
 }

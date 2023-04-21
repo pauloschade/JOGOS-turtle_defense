@@ -18,12 +18,6 @@ public sealed class Currency : SingletonBase<Currency>
     private void EndGame()
     {
       treasury.EndGame(balance);
-      NullInstance();
-    }
-
-    private void NullInstance()
-    {
-      _instance = null;
     }
 
     protected override void Init()
