@@ -20,14 +20,7 @@ public class ShooterTower : AttackTower
   //on collision trigger
   protected void OnTriggerEnter2D(Collider2D other)
   {
-    if (other.gameObject.tag == "Enemy")
-    {
-      target = other.gameObject.GetComponent<Enemy>();
-      if (target.YPos == YPos)
-      {
-        StartCoroutine(AttackMotion());
-      }
-    }
+    CheckAttack(other.gameObject);
   }
 
   protected void SetTriggerCollider()

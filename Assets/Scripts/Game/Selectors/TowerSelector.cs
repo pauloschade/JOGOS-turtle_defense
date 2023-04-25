@@ -19,6 +19,7 @@ public class TowerSelector : MonoBehaviour
   }
   public virtual void SpawnTower(Vector3Int cellPosition, Tilemap spawnTiles)
   {
+    if (currency.balance < towerCost) return;
     Vector3Int[] cellPositions = GetCellPositions(cellPosition);
     if (!GetCellState(cellPositions, spawnTiles)) return;
     GameObject tower = Instantiate(prefab, spawnTowerRoot);

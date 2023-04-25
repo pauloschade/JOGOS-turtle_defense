@@ -7,6 +7,7 @@ public abstract class Projectile : MonoBehaviour
     protected float range;
     protected int yPos;
     protected float distanceTraveled = 0.0f;
+    //protected GameObject target;
 
     protected virtual void FixedUpdate()
     {

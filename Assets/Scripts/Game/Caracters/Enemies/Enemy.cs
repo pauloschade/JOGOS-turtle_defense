@@ -32,7 +32,7 @@ public class Enemy : Caracter
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-      if (IsDead) return;
+      if (target != null) return;
       if (collision.gameObject.CompareTag("Tower"))
       {
         target = collision.gameObject.GetComponent<Tower>();
@@ -41,18 +41,19 @@ public class Enemy : Caracter
           return;
         }
         target = null;
+        return;
       }
       if (collision.gameObject.CompareTag("EOM"))
       {
         //destroy enemy
-        Destroy(gameObject);
+        Die();
         gameManager.SetGameOver();
       }
     }
 
     protected virtual IEnumerator AttackMotion()
     {
-      if (target.IsDead) yield break;
+      if (target == null) yield break;
       yield return Animate(attackRate);
       Attack();
       StartCoroutine(AttackMotion());

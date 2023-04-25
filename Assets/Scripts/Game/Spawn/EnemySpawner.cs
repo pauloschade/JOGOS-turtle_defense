@@ -9,6 +9,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private float spawnInterval=2f;
     [SerializeField] private int totalEnemies= 10;
     [SerializeField] private GameManager gameManager;
+    private List<GameObject> _enemiesAlive = new List<GameObject>();
 
     
     public void Start()
@@ -17,10 +18,16 @@ public class EnemySpawner : MonoBehaviour
       StartCoroutine(SpawnDelay());
     }
 
+    void Update()
+    {
+      if(gameManager.GameOver || gameManager.Victory) return;
+      if(totalEnemies <= 0 && _enemiesAlive.Count == 0) gameManager.SetVictory();
+      RemoveDead();
+    }
+
     IEnumerator SpawnDelay()
     {
       if(Check()){
-        gameManager.SetVictory();
         yield break;
       } 
       SpawnEnemy();
@@ -36,11 +43,21 @@ public class EnemySpawner : MonoBehaviour
       enemy.GetComponent<Enemy>().Init();
       float towerSize = enemy.GetComponent<SpriteRenderer>().bounds.size.y/3;
       enemy.transform.position += towerSize * Vector3.up;
+      _enemiesAlive.Add(enemy);
       totalEnemies --;
     }
 
     private bool Check()
     {
       return totalEnemies > 0 ? false : true;
+    }
+
+    private void RemoveDead()
+    {
+      for(int i = 0; i < _enemiesAlive.Count; i++) {
+        if(_enemiesAlive[i] == null){
+          _enemiesAlive.RemoveAt(i);
+        }
+      }
     }
 }
