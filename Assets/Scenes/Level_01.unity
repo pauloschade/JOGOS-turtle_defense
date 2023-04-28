@@ -209,7 +209,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.5, y: -20}
+  m_AnchoredPosition: {x: -0.49996948, y: -20}
   m_SizeDelta: {x: -266, y: 488}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &185618134
@@ -2179,6 +2179,11 @@ Transform:
   m_Father: {fileID: 416527387}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &605219207 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1723876700457314728, guid: 5da9f5fdf3c124524b5864fd6c15fed4, type: 3}
+  m_PrefabInstance: {fileID: 1723876701313513389}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &666600168
 GameObject:
   m_ObjectHideFlags: 0
@@ -2476,6 +2481,7 @@ MonoBehaviour:
   - {fileID: 793609086}
   - {fileID: 718789551}
   spawnInterval: 2
+  totalEnemies: 10
 --- !u!1 &998261224
 GameObject:
   m_ObjectHideFlags: 0
@@ -5978,12 +5984,25 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1723876700457314724, guid: 5da9f5fdf3c124524b5864fd6c15fed4, type: 3}
   m_PrefabInstance: {fileID: 1723876701313513389}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 605219207}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1292475918
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 605219207}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce70100d2f96e476e929fd9174d6c960, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  index: 1
 --- !u!1 &1364843066
 GameObject:
   m_ObjectHideFlags: 0
@@ -7196,6 +7215,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1723876700457314725, guid: 5da9f5fdf3c124524b5864fd6c15fed4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1723876700457314725, guid: 5da9f5fdf3c124524b5864fd6c15fed4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 901524037}
@@ -7291,7 +7314,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: TowerContainer_02
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1723876700457314725, guid: 5da9f5fdf3c124524b5864fd6c15fed4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5da9f5fdf3c124524b5864fd6c15fed4, type: 3}
 --- !u!1001 &2128210795670083334
 PrefabInstance:
@@ -7565,5 +7589,6 @@ PrefabInstance:
       propertyPath: spawnTowerRoot
       value: 
       objectReference: {fileID: 800088380}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4347816505622584210, guid: 5cca000b4ac9a4092ab442ccda4896e0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5cca000b4ac9a4092ab442ccda4896e0, type: 3}

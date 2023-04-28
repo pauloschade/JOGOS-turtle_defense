@@ -49,7 +49,7 @@ public abstract class Tower : Caracter
     protected virtual void CenterOnCells(Tilemap spawnTiles)
     {
         Vector3 center = Vector3.zero;
-        float towerSize = gameObject.GetComponent<SpriteRenderer>().bounds.size.y/3;
+        float towerSize = gameObject.GetComponent<SpriteRenderer>().bounds.size.y/5;
         foreach (Vector3Int cellPosition in cellPositions)
         {
             center += spawnTiles.GetCellCenterWorld(cellPosition);

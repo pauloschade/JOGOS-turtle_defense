@@ -41,8 +41,8 @@ public class EnemySpawner : MonoBehaviour
       int spawnPoint = Random.Range(0,spawnPoints.Count);
       GameObject enemy = Instantiate(prefabs[prefab], spawnPoints[spawnPoint]);
       enemy.GetComponent<Enemy>().Init();
-      float towerSize = enemy.GetComponent<SpriteRenderer>().bounds.size.y/3;
-      enemy.transform.position += towerSize * Vector3.up;
+      //float towerSize = enemy.GetComponent<SpriteRenderer>().bounds.size.y;
+      //enemy.transform.position += towerSize * Vector3.up;
       _enemiesAlive.Add(enemy);
       totalEnemies --;
     }

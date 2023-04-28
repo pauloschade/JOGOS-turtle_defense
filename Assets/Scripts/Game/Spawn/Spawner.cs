@@ -27,12 +27,11 @@ public class Spawner : MonoBehaviour
     HighlightTower();
   }
 
-  void DetectSpawnPoint()
+  public void DetectSpawnPoint()
   {
     Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
     Vector3Int tilePos = spawnTiles.WorldToCell(mousePos);
     Spawn(tilePos);
-
   }
 
   void Spawn(Vector3Int tilePos)
