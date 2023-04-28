@@ -20,7 +20,7 @@ TagManager:
   - Interactive
   - Towers
   - Enemies
-  - 
+  - Details
   - 
   - 
   - 
@@ -50,6 +50,9 @@ TagManager:
     locked: 0
   - name: Interactive
     uniqueID: 2581487467
+    locked: 0
+  - name: Details
+    uniqueID: 2595983547
     locked: 0
   - name: Towers
     uniqueID: 1015041931
