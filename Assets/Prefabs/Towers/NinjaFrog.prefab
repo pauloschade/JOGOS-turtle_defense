@@ -75,7 +75,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1015041931
-  m_SortingLayer: 3
+  m_SortingLayer: 4
   m_SortingOrder: 0
   m_Sprite: {fileID: -6056987297122131021, guid: cd947491a13509945aa1b644f9db3ef2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -107,9 +107,11 @@ MonoBehaviour:
   - {fileID: -4540918584354326388, guid: e362bc6a7c79fce4db16d145d43a5550, type: 3}
   - {fileID: -4455822056875728695, guid: e362bc6a7c79fce4db16d145d43a5550, type: 3}
   - {fileID: -6056987297122131021, guid: cd947491a13509945aa1b644f9db3ef2, type: 3}
+  audio: {fileID: 6373458069715113168, guid: d1725efa448f24d8cb16f7345cf59bbd, type: 3}
   healthbar: {fileID: 6871919442417728473, guid: 45bdedd2d9632477abe64df47d9eb61d, type: 3}
   damage: 7
   attackRate: 2
+  IsAttacking: 0
   speed: 10
   range: 10
   projectilePrefab: {fileID: 5025860608346874974, guid: 2fa05eb95fb5e40ca9b7ab2943561700, type: 3}

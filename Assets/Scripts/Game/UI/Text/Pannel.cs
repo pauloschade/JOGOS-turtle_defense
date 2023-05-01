@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class Pannel : MonoBehaviour 
 {
   //deactivate all UI elements
+
+  [SerializeField] private AudioSource audio;
   [SerializeField] private int _type;
   private GameManager _gameManager;
   private bool _canvaSet;
@@ -23,6 +25,7 @@ public class Pannel : MonoBehaviour
     if(_canvaSet) return;
     if(Check()) {
       _canvaUI.SetActive(true);
+      audio.Play(0);
       _canvaSet = true;
     }
   }

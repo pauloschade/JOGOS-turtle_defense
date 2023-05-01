@@ -6,23 +6,24 @@ public sealed class GameManager : SingletonBase<GameManager>
 {
   public bool GameOver {get; private set; }
   public bool Victory {get; private set; }
-  private int _maxEnemiesCount = 0;
+  public int MaxEnemiesCount {get; private set; } = 0;
   private bool _isCountSet;
 
   public void SetEnemiesCount(int count)
   {
     if(_isCountSet) return;
-    _maxEnemiesCount = count;
+    MaxEnemiesCount = count;
     _isCountSet = true;
   }
 
   public void SetGameOver()
   {
     if(Check()) return;
-    if(_maxEnemiesCount > 0) {
-      _maxEnemiesCount--;
+    if(MaxEnemiesCount > 0) {
+      MaxEnemiesCount--;
       return;
     };
+    MaxEnemiesCount = -1;
     GameOver = true;
     Debug.Log("Game Over");
   }

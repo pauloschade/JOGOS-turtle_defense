@@ -8,6 +8,8 @@ public class Spawner : MonoBehaviour
 {
   [SerializeField] private List<Image> towerUI;
   [SerializeField] private Tilemap spawnTiles;
+  [SerializeField] private AudioSource audioSuccess;
+  [SerializeField] private AudioSource audioError;
   private int spawnIndex;
 
   void Start()
@@ -36,7 +38,8 @@ public class Spawner : MonoBehaviour
 
   void Spawn(Vector3Int tilePos)
   {
-    towerUI[spawnIndex].GetComponent<TowerSelector>().SpawnTower(tilePos, spawnTiles);
+    if(towerUI[spawnIndex].GetComponent<TowerSelector>().SpawnTower(tilePos, spawnTiles)) audioSuccess.Play(0);
+    else audioError.Play(0);
     UnhighlightTower();
     ClearIndex();
   }
