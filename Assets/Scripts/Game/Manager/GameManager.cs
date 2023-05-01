@@ -29,7 +29,7 @@ public sealed class GameManager : SingletonBase<GameManager>
   }
 
   public void SetVictory()
-  {
+  { 
     if(Check()) return;
     Victory = true;
   }

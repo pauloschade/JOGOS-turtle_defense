@@ -460,7 +460,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 3052684163847195106, guid: 5d9f203b2f02a4a36a13f611fd38e443, type: 3}
   spawnTowerRoot: {fileID: 0}
-  towerCost: 25
+  towerCost: 10
   cost: {fileID: 2128210795525409303}
 --- !u!114 &6899966537973994586
 MonoBehaviour:
