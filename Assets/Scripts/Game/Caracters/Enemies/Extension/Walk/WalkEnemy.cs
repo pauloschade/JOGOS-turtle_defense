@@ -11,7 +11,7 @@ public class WalkEnemy : Enemy
 
   private float deltaTime = 0.0f;
 
-  protected void Update()
+  protected override void Update()
   {
     deltaTime += Time.deltaTime;
     ChangeAnimation();
@@ -33,8 +33,4 @@ public class WalkEnemy : Enemy
       walkSpriteIndex++;
     }
   }
-
-
-
-
 }

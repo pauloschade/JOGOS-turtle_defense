@@ -11,12 +11,16 @@ public class Enemy : Caracter
     [SerializeField] protected float speed;
     [SerializeField] protected float damage;
     [SerializeField] protected int attackRate;
+
+    [SerializeField] private int reward = 1;
+    private Currency currency;
     private Tower target = null;
     [SerializeField] protected GameManager gameManager;
 
     public override void Start()
     {
       base.Start();
+      currency = Currency.GetInstance();
       gameManager = GameManager.GetInstance();
     }
 
@@ -24,7 +28,7 @@ public class Enemy : Caracter
     {
       SetYPos();
     }
-    protected void Update()
+    protected virtual void Update()
     {
       if (IsDead) return;
       if (target != null) return; 
@@ -47,7 +51,7 @@ public class Enemy : Caracter
       if (collision.gameObject.CompareTag("EOM"))
       {
         //destroy enemy
-        Die();
+        Destroy(gameObject);
         gameManager.SetGameOver();
       }
     }
@@ -77,6 +81,12 @@ public class Enemy : Caracter
     public override int GetXPos()
     {
       return (int) Math.Floor(transform.position.x);
+    }
+
+    protected override void Die()
+    {
+      base.Die();
+      currency.AddFunds(reward);
     }
 
 }

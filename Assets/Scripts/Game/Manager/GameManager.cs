@@ -38,4 +38,12 @@ public sealed class GameManager : SingletonBase<GameManager>
   {
     return Victory || GameOver;
   }
+
+  public void Reset()
+  {
+    GameOver = false;
+    Victory = false;
+    MaxEnemiesCount = 0;
+    _isCountSet = false;
+  }
 }
