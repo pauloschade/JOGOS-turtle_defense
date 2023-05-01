@@ -3136,7 +3136,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefabs:
   - {fileID: 869297017752583622, guid: c5d4a8f3d236f4f369595cdd703efad6, type: 3}
-  - {fileID: 869297017752583622, guid: c5d4a8f3d236f4f369595cdd703efad6, type: 3}
+  - {fileID: 1550725132734405627, guid: 348a85633393b4eb48b997da8cd8f8e7, type: 3}
+  - {fileID: 1550725132734405627, guid: 2483f65d2588f734fa41a66f22c16daa, type: 3}
   spawnPoints:
   - {fileID: 1669391788}
   - {fileID: 2047247003}
@@ -3148,8 +3149,8 @@ MonoBehaviour:
   - {fileID: 1495855226}
   - {fileID: 793609086}
   - {fileID: 718789551}
-  spawnInterval: 2
-  totalEnemies: 10
+  spawnInterval: 1.75
+  totalEnemies: 12
 --- !u!114 &901524043
 MonoBehaviour:
   m_ObjectHideFlags: 0

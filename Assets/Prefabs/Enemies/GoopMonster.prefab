@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8185782440276258525}
   - component: {fileID: 6831028551809894439}
   m_Layer: 10
-  m_Name: MushroomMonster
+  m_Name: GoopMonster
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: -1859651999
   m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: 2470319409956435798, guid: 4de760c38ab41314bbdcfb6943023452, type: 3}
+  m_Sprite: {fileID: 4320010084133899996, guid: 52d40d1d463a123498d838dd108b712a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59da8847e4f494ee0a01feb454fb3eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 20.1
+  health: 30
   spriteArray:
   - {fileID: 4320010084133899996, guid: 52d40d1d463a123498d838dd108b712a, type: 3}
   - {fileID: 7659680398461486745, guid: 52d40d1d463a123498d838dd108b712a, type: 3}
@@ -107,9 +107,10 @@ MonoBehaviour:
   - {fileID: 6870164852964529440, guid: 52d40d1d463a123498d838dd108b712a, type: 3}
   - {fileID: -5462098846767402552, guid: 52d40d1d463a123498d838dd108b712a, type: 3}
   audio: {fileID: 0}
-  speed: 2
+  speed: 3
   damage: 10
-  attackRate: 1
+  attackRate: 2
+  reward: 7
 --- !u!50 &8185782440276258525
 Rigidbody2D:
   serializedVersion: 4
@@ -148,7 +149,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.5920398, y: 1.5920398}
+    oldSize: {x: 1.76, y: 1.2}
     newSize: {x: 0.32, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

@@ -643,6 +643,7 @@ GameObject:
   - component: {fileID: 6128230290263965063}
   - component: {fileID: 6128230290263965056}
   - component: {fileID: 6128230290263965057}
+  - component: {fileID: 5909776807013916241}
   m_Layer: 5
   m_Name: Menu
   m_TagString: Untagged
@@ -747,6 +748,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PauseMenuUI: {fileID: 6128230289511310732}
+--- !u!114 &5909776807013916241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6128230290263965058}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4712ab685017741159741e2ff49aacff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6128230290269030663
 GameObject:
   m_ObjectHideFlags: 0
@@ -871,7 +884,31 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 6128230290263965057}
         m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: Resume
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6128230290263965057}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
         m_MethodName: LeaveGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5909776807013916241}
+        m_TargetAssemblyTypeName: OnEndGame, Assembly-CSharp
+        m_MethodName: GameOver
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1273,6 +1310,22 @@ PrefabInstance:
     - target: {fileID: 3833566079114776324, guid: 4c09a55625d6c2941a9a30a82f4966cd, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -37.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3833566079114776331, guid: 4c09a55625d6c2941a9a30a82f4966cd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3833566079114776331, guid: 4c09a55625d6c2941a9a30a82f4966cd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 5909776807013916241}
+    - target: {fileID: 3833566079114776331, guid: 4c09a55625d6c2941a9a30a82f4966cd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: GameOver
+      objectReference: {fileID: 0}
+    - target: {fileID: 3833566079114776331, guid: 4c09a55625d6c2941a9a30a82f4966cd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: OnEndGame, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3833566079463087831, guid: 4c09a55625d6c2941a9a30a82f4966cd, type: 3}
       propertyPath: m_AnchorMax.x

@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6063e4b2dac4243c5be295f04d1b8a5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 20
+  health: 15
   spriteArray:
   - {fileID: 3474578761864754926, guid: 6991e54fe8bb5724bafb4aba16583d49, type: 3}
   - {fileID: -8715295707796611098, guid: badf6f9cf3e259c47a2031211fdf1867, type: 3}
@@ -156,9 +156,9 @@ MonoBehaviour:
   - {fileID: -8715295707796611098, guid: badf6f9cf3e259c47a2031211fdf1867, type: 3}
   audio: {fileID: 0}
   speed: 5
-  damage: 10
-  attackRate: 1
-  reward: 1
+  damage: 4
+  attackRate: 3
+  reward: 4
   walkSpriteArray:
   - {fileID: 3474578761864754926, guid: 6991e54fe8bb5724bafb4aba16583d49, type: 3}
   - {fileID: -7861724204117881798, guid: 6991e54fe8bb5724bafb4aba16583d49, type: 3}
