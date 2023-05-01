@@ -158,7 +158,7 @@ MonoBehaviour:
   speed: 5
   damage: 4
   attackRate: 3
-  reward: 4
+  reward: 3
   walkSpriteArray:
   - {fileID: 3474578761864754926, guid: 6991e54fe8bb5724bafb4aba16583d49, type: 3}
   - {fileID: -7861724204117881798, guid: 6991e54fe8bb5724bafb4aba16583d49, type: 3}
