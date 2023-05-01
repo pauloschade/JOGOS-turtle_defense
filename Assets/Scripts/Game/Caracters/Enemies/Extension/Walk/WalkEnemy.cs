@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class WalkEnemy : Enemy
 {
-  [SerializeField] protected Sprite[] walkSpriteArray;
+  [SerializeField] protected List<Sprite> walkSpriteArray;
   private int walkSpriteIndex = 0;
 
   private float deltaTime = 0.0f;
@@ -20,7 +20,6 @@ public class WalkEnemy : Enemy
 
   protected override void Translate()
   {
-    if (walkSpriteIndex == walkSpriteArray.Length) walkSpriteIndex = 0;
     gameObject.GetComponent<SpriteRenderer>().sprite = walkSpriteArray[walkSpriteIndex];
     base.Translate();
   }
@@ -29,6 +28,7 @@ public class WalkEnemy : Enemy
   {
     if (deltaTime >= 1/(speed*5))
     {
+      if (walkSpriteIndex == walkSpriteArray.Count - 1) walkSpriteIndex = 0;
       deltaTime = 0.0f;
       walkSpriteIndex++;
     }
