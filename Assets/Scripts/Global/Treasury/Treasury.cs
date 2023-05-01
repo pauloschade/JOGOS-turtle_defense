@@ -27,6 +27,7 @@ public sealed class Treasury : SingletonBase<Treasury>
     public void EndGame(float amount)
     {
       AddFunds(amount);
+      if(bank == null) bank = Bank.GetInstance();
       BankBalance = bank.GenerateReturn(BankBalance);
     }
 

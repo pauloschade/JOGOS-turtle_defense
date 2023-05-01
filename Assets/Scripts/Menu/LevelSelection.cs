@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelSelection : MonoBehaviour
 {
-    [SerializeField] private bool unlocked = false;
+    [SerializeField] public bool unlocked = false;
 
     public Image unlockImage;
 
