@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59da8847e4f494ee0a01feb454fb3eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 20
+  health: 20.1
   spriteArray:
   - {fileID: 4320010084133899996, guid: 52d40d1d463a123498d838dd108b712a, type: 3}
   - {fileID: 7659680398461486745, guid: 52d40d1d463a123498d838dd108b712a, type: 3}
