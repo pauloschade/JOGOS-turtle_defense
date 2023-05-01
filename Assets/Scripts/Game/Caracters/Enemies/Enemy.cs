@@ -14,8 +14,9 @@ public class Enemy : Caracter
     private Tower target = null;
     [SerializeField] protected GameManager gameManager;
 
-    void Start()
+    public override void Start()
     {
+      base.Start();
       gameManager = GameManager.GetInstance();
     }
 
@@ -23,7 +24,7 @@ public class Enemy : Caracter
     {
       SetYPos();
     }
-    void Update()
+    protected void Update()
     {
       if (IsDead) return;
       if (target != null) return; 

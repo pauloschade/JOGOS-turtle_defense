@@ -30,6 +30,7 @@ public abstract class AttackTower : Tower
       yield break;
     }
     yield return Animate(attackRate);
+    AttackSound();
     Attack();
     StartCoroutine(AttackMotion());
   }
@@ -55,4 +56,8 @@ public abstract class AttackTower : Tower
   }
   protected abstract void Attack();
 
+  private void AttackSound()
+  {
+    if(audio != null) audio.Play(0);
+  }
 }

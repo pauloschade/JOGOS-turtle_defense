@@ -6,12 +6,12 @@ public sealed class InstancesManager : MonoBehaviour
 {
   private static GameManager _gameManager;
   private static Currency _currency;
-  [SerializeField] private int _maxEnemiesCount;
+  public int maxEnemiesCount;
 
   void Start()
   {
     _gameManager = GameManager.GetInstance();
-    _gameManager.SetEnemiesCount(_maxEnemiesCount);
+    _gameManager.SetEnemiesCount(maxEnemiesCount);
 
     _currency = Currency.GetInstance();
   }

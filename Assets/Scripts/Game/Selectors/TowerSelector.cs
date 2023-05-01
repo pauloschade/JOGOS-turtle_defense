@@ -17,14 +17,15 @@ public class TowerSelector : MonoBehaviour
     currency = Currency.GetInstance();
     cost.Init(towerCost);
   }
-  public virtual void SpawnTower(Vector3Int cellPosition, Tilemap spawnTiles)
+  public virtual bool SpawnTower(Vector3Int cellPosition, Tilemap spawnTiles)
   {
-    if (currency.balance < towerCost) return;
+    if (currency.balance < towerCost) return false;
     Vector3Int[] cellPositions = GetCellPositions(cellPosition);
-    if (!GetCellState(cellPositions, spawnTiles)) return;
+    if (!GetCellState(cellPositions, spawnTiles)) return false;
     GameObject tower = Instantiate(prefab, spawnTowerRoot);
     tower.GetComponent<Tower>().Init(cellPositions, spawnTiles);
     Spend(towerCost);
+    return true;
   }
 
   protected virtual Vector3Int[] GetCellPositions(Vector3Int cellPosition)

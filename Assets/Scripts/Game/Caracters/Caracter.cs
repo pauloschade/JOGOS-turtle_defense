@@ -10,8 +10,14 @@ public abstract class Caracter : MonoBehaviour
 {
     [SerializeField] protected float health;
     [SerializeField] protected Sprite[] spriteArray;
+    [SerializeField] protected AudioSource audio;
     public int YPos { get; protected set;}
     public bool IsDead  { get; protected set;}
+
+    public virtual void Start()
+    {
+      if(audio != null) audio = GameObject.Instantiate(audio);
+    }
 
     public virtual void TakeDamage(float amount, int hitBox)
     {

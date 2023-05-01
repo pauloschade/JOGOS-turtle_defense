@@ -10,8 +10,9 @@ public abstract class Tower : Caracter
     [SerializeField] protected Healthbar healthbar;
     protected Vector3Int[] cellPositions;
     
-    public virtual void Start()
+    public override void Start()
     {
+        base.Start();
         //instantiates healthbar
         healthbar = Instantiate(healthbar, transform);
         healthbar.Init(health);
