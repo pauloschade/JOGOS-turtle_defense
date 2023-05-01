@@ -25,7 +25,6 @@ public class Hearts : MonoBehaviour
   {
     if(_gameManager.MaxEnemiesCount != currentHearts)
     {
-      Debug.Log("SetHearts " + _gameManager.MaxEnemiesCount + " " + currentHearts);
       currentHearts = _gameManager.MaxEnemiesCount;
       DestroyHearts();
       for(int i = 0; i <= currentHearts; i++)

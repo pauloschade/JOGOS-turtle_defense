@@ -15,10 +15,18 @@ public sealed class Currency : SingletonBase<Currency>
       if(amount > balance) return;
       balance -= amount;
     }
-    private void EndGame()
+    public void Victory()
     {
       treasury.EndGame(balance);
+      Destroy();
     }
+
+    public void GameOver()
+    {
+      Destroy();
+    }
+
+
 
     protected override void Init()
     {
